@@ -1,18 +1,97 @@
-//destinations
 <!DOCTYPE html>
 <html>  
 <head>
     <title>Destinations - Travel Blog</title>
     <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        h1 {
+            color: #2d6a4f;
+            text-align: center;
+        }
+        .destination {
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid #e9ecef;
+            padding-bottom: 2rem;
+        }
+        .destination:last-child {
+            border-bottom: none;
+        }
+        .destination img {
+            width: 100%;
+            max-width: 400px;
+            display: block;
+            margin: 1rem auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        h2 {
+            color: #40916c;
+        }
+        ul {
+            margin-left: 1.5rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Popular Travel Destinations</h1>
-    <ul>
-        <li>Paris, France</li>
-        <li>Tokyo, Japan</li>
-        <li>New York City, USA</li>
-        <li>Sydney, Australia</li>
-        <li>Cape Town, South Africa</li>
-    </ul>
+    <main>
+        <h1>Popular Travel Destinations</h1>
+        
+        <section class="destination">
+            <h2>Paris, France</h2>
+            <p>
+                The city of lights and romance, Paris is famous for its art, architecture, and vibrant street life. From the iconic Eiffel Tower to charming cafes, every corner tells a story.
+            </p>
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="Eiffel Tower in Paris">
+            <ul>
+                <li>Climb the Eiffel Tower</li>
+                <li>Visit the Louvre Museum</li>
+                <li>Stroll along the Seine River</li>
+                <li>Enjoy French pastries at local bakeries</li>
+            </ul>
+        </section>
+
+        <section class="destination">
+            <h2>Tokyo, Japan</h2>
+            <p>
+                A dazzling blend of tradition and innovation, Tokyo offers neon-lit skyscrapers, tranquil temples, and world-class cuisine. Experience the energy of this unforgettable city.
+            </p>
+            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80" alt="Tokyo cityscape">
+            <ul>
+                <li>Explore the historic Asakusa district</li>
+                <li>See cherry blossoms in Ueno Park</li>
+                <li>Shop in Shibuya and Harajuku</li>
+                <li>Try authentic sushi and ramen</li>
+            </ul>
+        </section>
+
+        <section class="destination">
+            <h2>Cape Town, South Africa</h2>
+            <p>
+                Nestled between mountains and sea, Cape Town is a paradise for nature lovers and adventurers. Its rich history and stunning landscapes make it a must-visit destination.
+            </p>
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Cape Town landscape">
+            <ul>
+                <li>Hike up Table Mountain</li>
+                <li>Visit Robben Island</li>
+                <li>Relax at Camps Bay Beach</li>
+                <li>Tour the Cape Winelands</li>
+            </ul>
+        </section>
+    </main>
 </body>
 </html>
