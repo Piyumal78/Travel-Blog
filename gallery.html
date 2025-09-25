@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Gallery - My Travel Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 30px 20px 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .gallery-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .nav-link {
+            display: inline-block;
+            margin: 0 15px;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .nav-link {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Travel Gallery</h1>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="1.jpg" alt="Beautiful Travel Destination">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Amazing Journey</div>
+                    <div class="gallery-description">Captured this breathtaking view during my recent adventure. Nature's beauty never ceases to amaze me!</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mountain Landscape">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Mountain Peaks</div>
+                    <div class="gallery-description">Standing at the edge of the world, surrounded by majestic peaks and endless skies. Pure serenity!</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tropical Beach">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Tropical Paradise</div>
+                    <div class="gallery-description">Crystal clear waters and golden sands - the perfect escape from everyday life. Paradise found!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="about.html" class="nav-link">About</a>
+            <a href="destinations.html" class="nav-link">Destinations</a>
+            <a href="#" class="nav-link">Home</a>
+        </div>
+    </div>
+
+    <script>
+        // Add click functionality to gallery items
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                const title = this.querySelector('.gallery-title').textContent;
+                
+                // Simple modal-like alert (you can enhance this with a proper modal)
+                alert(`Viewing: ${title}\nImage: ${img.alt}`);
+            });
+        });
+
+        // Add smooth scrolling for navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
